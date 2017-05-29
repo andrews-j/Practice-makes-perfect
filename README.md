@@ -104,7 +104,7 @@ def censor(text, word):
 
 censor('yes we can', 'yes')
 
-# COUNT FUNCTION
+# COUNT FUNCTION (Tells you how many times a number appears in a list)
 def count(sequence, item):
     x = 0
     for i in sequence:
@@ -116,3 +116,59 @@ def count(sequence, item):
     return x
     
 count([1,2,2,2,2,2,3,4,5,6,5,4,3,4,5,6,5,4,5], 5)
+
+# MEDIAN CALCULATOR (Not accepted by codecademy, but seems to work)
+def median(values):
+    values = sorted(values)
+    length = len(values)
+    if length == 1:
+        return values[0]
+    elif length % 2 == 0:
+        sum = values[length/2] + values[(length/2)-1]
+        sum = float(sum)
+        return sum/2
+    else:
+        return values[(length)/2]
+    
+median([4,5,5,4])
+
+# CODECADEMY ACCEPTED MEDIAN CODE:
+def median(lst):
+    lst = sorted(lst)
+    length = len(lst)
+    summa = 0
+    if length == 1:
+        return lst[0]
+    elif length % 2 != 0:
+        return lst[(length/2)]
+    else:
+        for i in lst[(length/2)-1:(length/2)+1]:
+            summa += i
+        return float(summa)/2
+median([6, 8, 12, 2, 23]) 
+
+
+for i in range(1,int(raw_input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print range(i).join()
+
+
+# Bobby's bizarre range code(DOESN'T WORK)
+def range( end=None, start=None, step_size = None):	
+    if end == None:
+        return [0]
+    if start == None:
+        start = 1
+    if step_size == None:
+        step_size = 1
+    rng = []
+    entry = start
+    while entry < int(end):
+        rng.append(entry)
+        entry+=step_size
+    return rng
+
+#s = raw_input()
+e = raw_input()
+#step = raw_input()
+
+print range(e)
